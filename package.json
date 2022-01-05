@@ -1,0 +1,30 @@
+{
+  "name": "to_do",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/gardgeoff/to_do.git",
+  "description": "an electron gui for todo.txt files",
+  "author": "Geoffrey Gard <geoffrey.gard@propervillainsllc.com>",
+  "license": "MIT",
+  "dependencies": {
+    "docx": "^7.3.0",
+    "exceljs": "^4.3.0",
+    "todotxt-parser": "^1.0.2"
+  },
+  "devDependencies": {
+    "electron": "^16.0.4",
+    "electron-builder": "^22.14.5"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "build": {
+    "directories": {
+      "buildResources": "resources"
+    },
+    "win": {
+      "asar": false,
+      "icon": "resources/icon.ico"
+    }
+  }
+}

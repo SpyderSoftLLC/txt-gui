@@ -1,0 +1,171 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+.list-container {
+  width: 100%;
+  background: rgb(233, 233, 233);
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+  background: #293241;
+  display: flex;
+  color: white;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+#submit {
+  margin-left: auto;
+  font-weight: bold;
+
+  font-size: 1.1rem;
+}
+
+.footer > input {
+  height: 35px;
+}
+
+.banner {
+  width: 100%;
+  color: white;
+  background: #ff8161;
+  font-size: 1.5rem;
+  padding-left: 20px;
+}
+#search {
+  padding: 10px;
+  width: 100%;
+  background: #293241;
+  position: fixed;
+}
+#invisibox {
+  width: 100%;
+  padding: 10px;
+  visibility: hidden;
+}
+#invisibox-bottom {
+  height: 100px;
+  width: 100%;
+  visibility: hidden;
+}
+invisibox > input {
+  background: none;
+  border: none;
+  height: 46px;
+}
+#search > input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: rgba(128, 128, 128, 0.801);
+  color: white;
+}
+#search > ::placeholder {
+  color: rgba(255, 255, 255, 0.712);
+}
+.footer > input {
+  width: auto;
+}
+#priority {
+  width: 60px;
+}
+#project,
+#context,
+#poc,
+#sprint {
+  width: 100px;
+}
+#todotext {
+  width: 100%;
+  min-width: 100px;
+}
+.add-control {
+  color: white;
+  margin: 0 5px;
+  background: rgba(0, 0, 0, 0.432);
+  padding: 10px;
+  border-radius: 4px;
+}
+.add-control:hover {
+  cursor: pointer;
+  background: black;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.check {
+  margin-right: 20px;
+}
+.list-item {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.473);
+  font-size: 1rem;
+  padding: 10px;
+  padding-left: 50px;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+}
+.list-item:hover {
+  background: rgb(189, 189, 189);
+}
+.del-item {
+  margin-right: 20px;
+  margin-left: auto;
+  text-decoration: none !important;
+  font-size: 1rem;
+  visibility: hidden;
+  font-weight: bold;
+}
+#tooltip {
+  background: #293241;
+  color: white;
+  padding: 0.5em;
+  border-radius: 4px;
+  position: fixed;
+  display: none;
+}
+.popup {
+  position: fixed;
+  z-index: 1000;
+
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  display: none;
+}
+.tag-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: rgb(216, 216, 216);
+  padding: 2em;
+}
+#meta-select {
+  width: 100%;
+}
+.close-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+}
+.btn-sort {
+  margin-top: 10px;
+  background: #ff8161;
+  color: white;
+  font-weight: bold;
+}
