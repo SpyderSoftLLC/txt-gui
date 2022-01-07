@@ -386,6 +386,7 @@ $(function () {
       mainArr.forEach((item) => {
         item.raw = item.raw.trim();
       });
+      console.log(mainArr);
       window.api.send("saveFile", { data: mainArr });
     }
   });

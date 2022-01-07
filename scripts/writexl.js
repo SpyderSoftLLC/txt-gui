@@ -39,6 +39,10 @@ exports.writeXl = function writeXl(object) {
     });
     try {
       const data = workbook.xlsx.writeFile(filepath).then(() => {});
-    } catch (err) {}
+    } catch (err) {
+      if (err) {
+        console.log(err);
+      }
+    }
   });
 };

@@ -1,9 +1,5 @@
-(A) this item has a priority and some text
-(B) new item 
-x (B) 2022-01-05 this item has everything and has been edited and completed +project_one @context_one sprint:sprint_1 due:2022-03-10
-this item has some custom meta data sprint:sprint_1
-this item has a due date due:2022-02-05
-this item has a context @cool_context
-this item has a project +cool_project
-this item has only text
-x 2022-01-05 this item has a start date
+(A) test
+(B) test
+(C) test
+(D) test 
+(D) test but not a test 

@@ -50,7 +50,6 @@ function saveToTxt(data, directory) {
       tempString += line;
     });
   }
-
   fs.writeFile(directory, tempString, function (err) {
     if (data == "") {
       readTxtFile(directory);
@@ -83,7 +82,6 @@ function stripText(string) {
   if (/\w+:\w/gm.test(text)) {
     text = text.substring(0, text.indexOf(text.match(/\w+:\w/gm)[0]));
   }
-
   return text.trim();
 }
 function readTxtFile(directory) {
@@ -92,7 +90,6 @@ function readTxtFile(directory) {
   read.split(/\r?\n/).forEach((line) => {
     arr.push(parser.relaxed(line));
   });
-
   let newA = [];
   arr.map((item) => {
     item[0].metadata.uid = uniqueid();
@@ -109,7 +106,6 @@ function readTxtFile(directory) {
 function sendEdit(command) {
   win.webContents.send("edit", { command });
 }
-
 function writeTxt() {
   let options = {
     title: "Save",
@@ -163,10 +159,6 @@ async function createWindow() {
           },
           {
             label: "Save",
-            click() {
-              saveToTxt(to_do, "./to_do.txt");
-              saveToJson(to_do);
-            },
             accelerator: "Ctrl+S"
           },
           {
@@ -260,6 +252,7 @@ async function createWindow() {
             },
             accelerator: "Ctrl+1"
           },
+
           {
             label: "Project",
             click() {
@@ -291,6 +284,12 @@ async function createWindow() {
               sorting = "metadata";
             },
             accelerator: "Ctrl+5"
+          },
+          {
+            label: "Toggle Auto Grouping",
+            click() {
+              sendEdit("tag");
+            }
           }
         ]
       }
@@ -319,14 +318,16 @@ app.whenReady().then(() => {
     let toDecipher = args.data;
     let returnObj = parser.relaxed(toDecipher);
     returnObj[0].text = stripText(returnObj[0].text);
-
     e.sender.send("parsed", returnObj);
   });
+
   ipcMain.on("saveFile", (e, args) => {
     let tempObj = args.data;
     saveToJson(tempObj);
+
     saveToTxt(tempObj, "./to_do.txt");
   });
+
   globalShortcut.register("f5", () => {
     win.reload();
   });
