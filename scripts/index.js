@@ -238,7 +238,7 @@ $(function () {
               });
             });
 
-          mainArr = param;
+          mainArr = tempItems;
         }
       })
       .disableSelection();
